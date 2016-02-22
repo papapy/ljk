@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="admin_template" template="/WEB-INF/page/layout/admin_layout.jsp">
+        <put-attribute name="title" value="ljk" />
+        <put-attribute name="header" value="/WEB-INF/page/comm/header.jsp" />
+        <put-attribute name="admin_menu" value="/WEB-INF/page/admin/comm/admin_menu.jsp" />
+        <put-attribute name="body" value="" />
+    </definition>
+
+    <definition name="*/*.admin" extends="admin_template">
+        <put-attribute name="body" value="/WEB-INF/page/{1}/{2}.jsp"/>
+    </definition>
+    <definition name="*/*/*.admin" extends="admin_template">
+        <put-attribute name="body" value="/WEB-INF/page/{1}/{2}/{3}.jsp"/>
+    </definition>
+</tiles-definitions>
